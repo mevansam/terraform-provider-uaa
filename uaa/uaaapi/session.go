@@ -61,7 +61,7 @@ func NewSession(
 
 	s.uaaGateway = net.NewUAAGateway(s.config, s.Log.UI, s.Log.TracePrinter, envDialTimeout)
 	s.authManager = NewAuthManager(s.uaaGateway, s.config, net.NewRequestDumper(s.Log.TracePrinter))
-	s.uaaGateway.SetTokenRefresher(s.authManager)
+	//s.uaaGateway.SetTokenRefresher(s.authManager)
 
 	s.userManager, err = newUserManager(s.config, s.uaaGateway, s.Log)
 	if err != nil {
